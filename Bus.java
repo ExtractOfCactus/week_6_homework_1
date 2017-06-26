@@ -15,4 +15,9 @@ public class Bus {
     }
     return numberOfPassengers;
   }
+
+  public void addPassenger(Person person) {
+    int index = passengerCount();
+    this.passengers[index] = person;
+  }
 }
