@@ -25,4 +25,12 @@ public class BusStopTest {
     busStop.addPerson(person);
     assertEquals(1, busStop.queueCount());
   }
+
+  @Test
+  public void busStopIsFull() {
+    for (int i = 0; i < 15; i++) {
+      busStop.addPerson(person);
+    }
+    assertEquals(true, busStop.isBusStopFull());
+  }
 }

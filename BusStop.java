@@ -17,7 +17,12 @@ public class BusStop {
   }
 
   public void addPerson(Person person) {
+    if (isBusStopFull()) return;
     int index = queueCount();
     this.queue[index] = person;
+  }
+
+  public boolean isBusStopFull() {
+    return queueCount() == this.queue.length;
   }
 }
