@@ -25,4 +25,10 @@ public class Bus {
   public boolean isBusFull() {
     return passengerCount() == this.passengers.length;
   }
+
+  public void empty() {
+    for (int i = 0; i < this.passengers.length; i++) {
+      this.passengers[i] = null;
+    }
+  }
 }

@@ -38,4 +38,11 @@ public class BusTest {
     }
     assertEquals(18, bus.passengerCount());
   }
+
+  @Test
+  public void busCanEmpty() {
+    bus.addPassenger(person);
+    bus.empty();
+    assertEquals(0, bus.passengerCount());
+  }
 }
