@@ -22,4 +22,20 @@ public class BusTest {
     bus.addPassenger(person);
     assertEquals(1, bus.passengerCount());
   }
+
+  @Test
+  public void busIsFull() {
+    for (int i = 0; i < 18; i++) {
+      bus.addPassenger(person);
+    }
+    assertEquals(true, bus.isBusFull());
+  }
+
+  @Test
+  public void cannotAddPersonWhenBusIsFull() {
+    for (int i = 0; i < 21; i++) {
+      bus.addPassenger(person);
+    }
+    assertEquals(18, bus.passengerCount());
+  }
 }

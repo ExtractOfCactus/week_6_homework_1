@@ -17,7 +17,12 @@ public class Bus {
   }
 
   public void addPassenger(Person person) {
+    if (isBusFull()) return;
     int index = passengerCount();
     this.passengers[index] = person;
+  }
+
+  public boolean isBusFull() {
+    return passengerCount() == this.passengers.length;
   }
 }
