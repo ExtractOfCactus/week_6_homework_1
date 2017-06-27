@@ -36,4 +36,13 @@ public class BusStop {
     removePerson();
     bus.addPassenger(person);
   }
+
+  public void addWholeQueueToBus(Bus bus, Person person) {
+    int index = queueCount() - 1;
+    for (Person person : this.queue) {
+      if (this.queue[index] != null) {
+        addPassengerToBus(bus, person);
+      }  
+    } 
+  }
 }
