@@ -28,9 +28,33 @@ public class BusStopTest {
 
   @Test
   public void busStopIsFull() {
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < 10; i++) {
       busStop.addPerson(person);
     }
     assertEquals(true, busStop.isBusStopFull());
   }
+
+  @Test
+  public void cannotAddPersonWhenBusStopIsFull() {
+    for (int i = 0; i < 15; i++) {
+      busStop.addPerson(person);
+    }
+    assertEquals(10, busStop.queueCount());
+  }
+
+  @Test
+  public void canRemoveOnePersonFromQueue() {
+    for (int i = 0; i < 10; i++) {
+      busStop.addPerson(person);
+    }
+    busStop.removePerson();
+    assertEquals(9, busStop.queueCount());
+  }
+
+  // @Test 
+  // public void busStopCanAddPassengersToBus() {
+  //   busStop.addPerson(person);
+  //   busStop.addPassengerToBus(bus, person);
+  //   assertEquals(1, bus.queueCount());
+  // }
 }

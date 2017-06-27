@@ -25,4 +25,14 @@ public class BusStop {
   public boolean isBusStopFull() {
     return queueCount() == this.queue.length;
   }
+
+  public void removePerson() {
+    if (queueCount() == 0) return;
+    int index = queueCount() - 1;
+    this.queue[index] = null;
+  }
+
+  // public void addPassengerToBus(Bus bus, Person person) {
+
+  // }
 }
