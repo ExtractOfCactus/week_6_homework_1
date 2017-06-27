@@ -32,7 +32,8 @@ public class BusStop {
     this.queue[index] = null;
   }
 
-  // public void addPassengerToBus(Bus bus, Person person) {
-
-  // }
+  public void addPassengerToBus(Bus bus, Person person) {
+    removePerson();
+    bus.addPassenger(person);
+  }
 }

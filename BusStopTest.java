@@ -51,10 +51,11 @@ public class BusStopTest {
     assertEquals(9, busStop.queueCount());
   }
 
-  // @Test 
-  // public void busStopCanAddPassengersToBus() {
-  //   busStop.addPerson(person);
-  //   busStop.addPassengerToBus(bus, person);
-  //   assertEquals(1, bus.queueCount());
-  // }
+  @Test 
+  public void busStopCanAddPassengersToBus() {
+    busStop.addPerson(person);
+    busStop.addPassengerToBus(bus, person);
+    assertEquals(1, bus.passengerCount());
+    assertEquals(0, busStop.queueCount());
+  }
 }
